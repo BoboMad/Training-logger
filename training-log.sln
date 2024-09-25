@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35219.272
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "training-log.Server", "training-log.Server\training-log.Server.csproj", "{8309B5E7-E121-4AFB-95BF-AAEEBD4CBF30}"
+EndProject
+Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "training-log.client", "training-log.client\training-log.client.esproj", "{EA5CBE26-B438-41F6-ABB3-72C5F71DF30A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8309B5E7-E121-4AFB-95BF-AAEEBD4CBF30}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8309B5E7-E121-4AFB-95BF-AAEEBD4CBF30}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8309B5E7-E121-4AFB-95BF-AAEEBD4CBF30}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8309B5E7-E121-4AFB-95BF-AAEEBD4CBF30}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EA5CBE26-B438-41F6-ABB3-72C5F71DF30A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EA5CBE26-B438-41F6-ABB3-72C5F71DF30A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EA5CBE26-B438-41F6-ABB3-72C5F71DF30A}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{EA5CBE26-B438-41F6-ABB3-72C5F71DF30A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EA5CBE26-B438-41F6-ABB3-72C5F71DF30A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EA5CBE26-B438-41F6-ABB3-72C5F71DF30A}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FEC77F28-69D3-4AE7-AA61-23B130707671}
+	EndGlobalSection
+EndGlobal

@@ -1,7 +1,9 @@
 using Azure.Identity;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
+using training_log.Server.Data;
 using training_log.Server.Interfaces;
 using training_log.Server.Services;
 namespace training_log.Server
@@ -15,9 +17,14 @@ namespace training_log.Server
             builder.Services.AddControllers();
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
+            builder.Services.AddAuthorization();
+            builder.Services.AddIdentityApiEndpoints<ApplicationUser>().AddEntityFrameworkStores<ApplicationDbContext>();
 
             var keyVaultUri = builder.Configuration["Keyvault:KeyVaultUri"];
-            builder.Configuration.AddAzureKeyVault( new Uri(keyVaultUri!), new DefaultAzureCredential());
+            builder.Configuration.AddAzureKeyVault( new Uri(keyVaultUri), new DefaultAzureCredential());
+
+            var sqldbconnstring = builder.Configuration["sqldbconnstring"];
+            builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(sqldbconnstring));
 
             var jwtKey = builder.Configuration["JWT:JwtSecret"];
             var jwtIssuer = builder.Configuration["JWT:Issuer"];
@@ -43,7 +50,7 @@ namespace training_log.Server
 
             app.UseDefaultFiles();
             app.UseStaticFiles();
-
+            app.MapIdentityApi<ApplicationUser>();
             if (app.Environment.IsDevelopment())
             {
                 app.UseSwagger();
